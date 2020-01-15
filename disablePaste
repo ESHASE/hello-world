@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+    
+	<body>
+
+    <script>
+
+        window.addEventListener("load", function(){
+        var disablePaste = document.getElementById('nob');
+        disablePaste.addEventListener("contextmenu", function(e){e.preventDefault();}, false);
+        disablePaste.addEventListener("keydown", handleKeydown, false);}, false)
+
+        function handleKeydown(e){
+            // ctrl + v
+            if(e.ctrlKey && e.keyCode == 86) {
+            e.preventDefault();
+            }
+            // shift + insert
+            if(e.shiftKey && e.keyCode == 45 ){
+            e.preventDefault();
+            }
+        }
+
+    </script>
+        <div>
+            メール : <br>
+            <input type="text" width="100" height="30" placeholder="xxxxx@xx.xx"><br>
+            メール（再） : <br>
+            <input type="text" id="nob" width="100" height="30" placeholder="xxxxx@xx.xx">
+        </div>
+	</body>
+</html>
